@@ -12,7 +12,7 @@
             function Recursive1(n) {
                 document.write("n=" + n + "<br>");
                 if(n > 1)
-                    Recursive(n-1);
+                    Recursive1(n-1);
             }
             function Hap(n) {
                 if(n > 1)
@@ -42,7 +42,7 @@
             Recursive1(5);
             for(var i = 1; i <= 5; i++){
                 result2 = Hap(i);
-                document.wirte("1 부터 " + i + "까지 합 = " + result2 + "<br>");
+                document.write("1 부터 " + i + "까지 합 = " + result2 + "<br>");
             }
         </script>
     </body>
