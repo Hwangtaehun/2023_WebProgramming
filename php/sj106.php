@@ -9,10 +9,11 @@
         $배열[1] = $배열[1] + 1;
         //$배열[2] = $배열[2] + 1;
         echo "<p>$배열[0], $배열[1], $배열[2]</p>";
-        &arr[2] = ' 2 번째';
-        &arr[0] = ' 0 번째';
-        &arr[3] = ' 3 번째';
-        $cnt = sizeof(&arr);
+
+        $arr[2] = ' 2 번째';
+        $arr[0] = ' 0 번째';
+        $arr[3] = ' 3 번째';
+        $cnt = sizeof($arr);
         echo "배열 요소 수 = $cnt, arr = $arr[0], $arr[1], $arr[2]<br>";
 
         $k1 = array(1, 'aaa', 3);
@@ -21,7 +22,7 @@
 
         $k2 = array(11, 2=>33, 44);
         $cnt = sizeof($k2);
-        echo "<p>k2의 size = $cnt";
+        echo "<p>k2의 size = $cnt<br>";
         echo "k2 = $k2[0], $k2[1], $k2[2], $k2[3]</p>";
 
         $k3['aa'] = 11;
@@ -32,6 +33,7 @@
         $a = 'cc';
         echo 'k3[$a] = '.$k3[$a].'<br>';
 
+        //이부분부터 확인해보기
         list($key, $value) = each($k3);
         echo("\$key = $key, \$value = $value<br>");
         list($key, $value) = each($k3);

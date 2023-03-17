@@ -17,7 +17,7 @@
         swap1($aa, $bb);
         echo "swap1()실행후의 \$aa = $aa, \$bb = $bb <br>";
         swap2($aa, $bb);
-        echo "swap2()실행후의 \$aa = $aa, \$bb = $bb <br>";
+        echo "swap2()실행후의 \$aa = $aa, \$bb = $bb </p>";
 
         function hap($a, $b){
             $c = $a + $b;
@@ -25,19 +25,19 @@
         }
 
         function swap1($a, $b){
-            echo "<p>swap1()에서 전 \$a = $a, \$b = $b <br>"
+            echo "<p>swap1()에서 전 \$a = $a, \$b = $b<br>";
             $c = $a;
             $a = $b;
             $b = $c;
-            echo "swap1()에서 후 \$a = $a, \$b = $b</p>"
+            echo "swap1()에서 후 \$a = $a, \$b = $b </p>";
         }
 
         function swap2(&$a, &$b){
-            echo "<p>swap2()에서 전 \$a = $a, \$b = $b <br>"
+            echo "<p>swap2()에서 전 \$a = $a, \$b = $b<br>";
             $c = $a;
             $a = $b;
             $b = $c;
-            echo "swap2()에서 후 \$a = $a, \$b = $b</p>"
+            echo "swap2()에서 후 \$a = $a, \$b = $b </p>";
         }
         ?>
     </body>
