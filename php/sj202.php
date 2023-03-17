@@ -22,13 +22,13 @@
         switch ($a) 
         {
             case '세종':
-                echo '<p>세종이 선택됨</p>'
+                echo '<p>세종이 선택됨</p>';
                 break;
             case '정보처리':
-                echo '<p>정보처리 선택</p>'
+                echo '<p>정보처리 선택됨</p>';
                 break;
             default:
-                echo '<p>default</p>'
+                echo '<p>default</p>';
                 break;
         }
         ?>

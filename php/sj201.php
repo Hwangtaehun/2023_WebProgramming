@@ -11,17 +11,17 @@
      else {
         echo '<p>$a = '.$a.'--> 거짓인디 ~~.</p>';
      }
-     if($a<0){
-        echo '<p>if($a = 음수네유...</p>';
+     if($a < 0){
+      echo '<p>if($a = 음수네유...</p>';
      }
-     elseif($a>0){
-        echo '<p>if($a = 양수인가봐...</p>';
+     elseif($a > 0){
+      echo '<p>if($a = 양수인가봐...</p>';
      }
      else{
-        echo '<p>$a = 나는 영이다.</p>'
+      echo '<p>$a = 나는 영이다.</p>';  
      }
-     if($a<0): echo '<p><$a = 또 음수네유...</p>';
-     elseif($a>0): echo '<p>$a = 또 양수인가봐...</p>';
+     if ($a<0): echo '<p>$a = 또 음수네유...</p>';
+     elseif ($a>0): echo '<p>$a = 또 양수인가봐...</p>';
      else: echo '<p>$a = 나는 아직도 영이다.</p>';
      endif;
      $a = 10;
