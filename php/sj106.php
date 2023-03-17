@@ -33,13 +33,12 @@
         $a = 'cc';
         echo 'k3[$a] = '.$k3[$a].'<br>';
 
-        //이부분부터 확인해보기
-        list($key, $value) = each($k3);
-        echo("\$key = $key, \$value = $value<br>");
-        list($key, $value) = each($k3);
-        echo("\$key = $key, \$value = $value<br>");
-        list($key, $value) = each($k3);
-        echo("\$key = $key, \$value = $value<br>");
+        // list($key, $value) = each($k3);
+        // echo("\$key = $key, \$value = $value<br>");
+        // list($key, $value) = each($k3);
+        // echo("\$key = $key, \$value = $value<br>");
+        // list($key, $value) = each($k3);
+        // echo("\$key = $key, \$value = $value<br>");
         
         foreach ($k3 as $key => $value) {
             echo '$key = '. $key . ',$value = '. $value . '<br>';

@@ -18,8 +18,8 @@
         echo(' $str3 = '.$str3.'<br>');
 
         echo('ENT_COMPACT='.htmlspecialchars($str3).'<br>');
-        echo('ENT_QUOTES='.htmlspecialchars($str3.ENT_QUOTES).'<br>');
-        echo('ENT_NOQUOTES='.htmlspecialchars($str3.ENT_NOQUOTES,'UTF-8').'<br>');
+        echo('ENT_QUOTES='.htmlspecialchars($str3,ENT_QUOTES).'<br>');
+        echo('ENT_NOQUOTES='.htmlspecialchars($str3,ENT_NOQUOTES,'UTF-8').'<br>');
 
         $str4 = strip_tags($str3);
         echo('$str4 = '.$str4.'<br>');
@@ -28,12 +28,12 @@
         echo('$str5 = '.$str5.'<br>');
         echo('$str5 = '.stripslashes($str5).'<br>');
 
-        $str6 = 'se.jong.computer';
+        $str6 = 'se,jong,computer';
         $arr = explode(',',$str6);
         print '<pre>';
         print_r($arr);
         print '</pre>';
-        $str7 = implode(',',$arr);
+        $str7 = implode(', ',$arr);
         print $str7;
     ?>
     </body>
