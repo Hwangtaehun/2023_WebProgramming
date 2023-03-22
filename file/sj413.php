@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8"><title>메모장</title>
-    <link rel = "stylesheet" href="..\css\form.css" />
+    <link rel = "stylesheet" href="..\css\form2.css" />
   </head>
   <body>
     <header>
