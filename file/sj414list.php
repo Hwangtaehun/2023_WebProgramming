@@ -10,7 +10,7 @@
             <h1>방 명 록 보기</h1>
         </header>
         <?php
-         $data_dir='.\data';
+         $data_dir='./data';
          $dir = opendir("$data_dir");
          while ($temp=readdir($dir)) {
            if (($temp != '.')&&($temp != '..')) {
@@ -21,7 +21,8 @@
 
          $cnt = count($filename);
          //echo 'cnt = '.$cnt.$filename[0].'<br>';
-         echo '<div class="form_class">방명록 갯수 = '.$cnt.'개 <a herf=sj414.html>입력 화면으로 </a></div>';
+         //$cnt = 0;
+         echo '<div class="form_class">방명록 갯수 = '.$cnt.'개 <a href=sj414.html>입력 화면으로 </a></div>';
          
          for ($i=$cnt-1; $i >= 0; $i--) { 
             $data = file("$data_dir/$filename[%i]");

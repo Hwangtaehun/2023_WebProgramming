@@ -18,7 +18,7 @@
       
       echo '<p>당신은 ';
       for($i=0; $i<$len; $i++){
-        echo '<img src=./images/'.$StrNum[$i].'.gif>';
+        echo '<img src=../images/'.$StrNum[$i].'.gif>';
       }
       echo '번째 손님입니다. </p>';
       echo '<p><a href = "sj412.html">홈으로</a></p>';
