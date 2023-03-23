@@ -11,6 +11,10 @@
         </header>
         <?php
           $data_dir='./data';
+        //   echo '<p> $data_dir = '.$data_dir.'</p>';
+        //   if(opendir("$data_dir")){
+        //     echo '폴더를 열 수 없습니다.';
+        //   }
           $dir = opendir("$data_dir");
           while ($temp=readdir($dir)) {
             if (($temp != '.')&&($temp != '..')) {
@@ -20,7 +24,7 @@
           closedir($dir);
 
           $cnt = count($filename) + 1;
-          echo 'cnt1 = '.$cnt.'<br>';
+          //echo 'cnt1 = '.$cnt.'<br>';
           $name     = htmlspecialchars($_POST['user_name'],     ENT_QUOTES, 'UTF-8');
           $password = htmlspecialchars($_POST['user_password'], ENT_QUOTES, 'UTF-8');
           $email    = htmlspecialchars($_POST['user_email'],    ENT_QUOTES, 'UTF-8');
@@ -29,8 +33,8 @@
           fwrite($fp, "$name\n$password\n$email\n%scomment");
           fclose($fp);
           echo '<dir class = "form_class"> 방명록에 기록 됨.'.
-               '<a herf=sj414.html>입력 화면으로 </a>'.
-               '<a herf=sj414list.php>내용보기화면으로</a></dir>';
+               '<a href=sj414.html>입력 화면으로 </a>'.
+               '<a href=sj414list.php>내용보기화면으로</a></dir>';
         ?>
     </body>
 </html>
