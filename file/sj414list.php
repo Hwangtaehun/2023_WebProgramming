@@ -13,9 +13,9 @@
          $data_dir='./data';
          $dir = opendir("$data_dir");
          while ($temp=readdir($dir)) {
-           if (($temp != '.')&&($temp != '..')) {
-               $filename[] = $temp;
-           }
+            if(($temp != '.') && ($temp != '..')) {
+                $filename[] = $temp;
+            }
          }
          closedir($dir);
 
