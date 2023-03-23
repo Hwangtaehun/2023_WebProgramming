@@ -10,7 +10,7 @@ $outStr = '<div class="form_class">방명록 갯수 = '.$cnt.'개 <a href=sj414.
 for ($i=$cnt-1; $i >= 0 ; $i--) { 
     $data=file("$data_dir/$filename[$i]");
     $tmp=implode('<br>', $data);
-    $outStr = '<div id="list"> 방명록 : '.$i.'<br>'.$tmp.'</div>';
+    $outStr .= '<div id="list"> 방명록 : '.$i.'<br>'.$tmp.'</div>';
 }
 
 $title = '방명록 보기';
