@@ -5,11 +5,13 @@ if(isset($_GET['page']))
     $page = htmlspecialchars($_GET['page'], ENT_QUOTES, 'UTF-8');
 else
     $page = 1;
+
 $listnum = 3;
 $pagenum = 3;
 $offset = $listnum*($page-1);
 $filename = readFileName($data_dir);
 sort($filename);
+
 $total_cnt = count($filename);
 $total_page = ceil($total_cnt/$listnum);
 $cur_no = $total_cnt - $listnum*($page-1);
@@ -21,7 +23,7 @@ $outStr = '<div class="form_class">'.
 for ($i=$cur_no - 1; $i >= $cur_no-3 ; $i--) { 
     $data = file("$data_dir/$filename[$i]");
     $tmp = implode('<br>', $data);
-    $outStr .= '<div id="list">방명록내용 '.$filename[$i]. '<br><span id="list2">'.$temp.'</span></div>';
+    $outStr .= '<div id="list">방명록내용 '.$filename[$i]. '<br><span id="list2">'.$tmp.'</span></div>';
     
     if($i == 0)
         break;
