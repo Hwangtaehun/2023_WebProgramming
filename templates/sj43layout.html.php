@@ -6,7 +6,7 @@
         <link type="text/css" rel="stylesheet" href="../css/sjlayout.css">
     </head>
     <body>
-        <?php include __DIR__. '/../templates/sj43header.html.php'; ?>
+        <?php include __DIR__.'/../templates/sj43header.html.php'; ?>
         <div id="content">
             <section id="main_section">
                 <article class="main_article">

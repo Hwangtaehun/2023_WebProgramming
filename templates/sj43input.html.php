@@ -14,7 +14,7 @@
         <div class="form_class">
             <input type="submit" value="입 력">
             <input type="reset" value="지우기">
-            <a href="sj43list.php">방명록 보기 화면으로</a>
+            <a href="sj43list2.php">방명록 보기 화면으로</a>
         </div>
     </fieldset>
 </form>
