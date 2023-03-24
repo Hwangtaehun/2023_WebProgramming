@@ -24,13 +24,21 @@
           closedir($dir);
 
           $cnt = count($filename) + 1;
-          //echo 'cnt1 = '.$cnt.'<br>';
+          echo 'cnt = '.$cnt.'<br>';
           $name     = htmlspecialchars($_POST['user_name'],     ENT_QUOTES, 'UTF-8');
           $password = htmlspecialchars($_POST['user_password'], ENT_QUOTES, 'UTF-8');
           $email    = htmlspecialchars($_POST['user_email'],    ENT_QUOTES, 'UTF-8');
           $comment  = htmlspecialchars($_POST['user_comment'],  ENT_QUOTES, 'UTF-8');
+          /*
+          echo '<p> 이름 = '.$name.'<br>';
+          echo '비밀번호 = '.$password.'<br>';
+          echo '이메일 = '.$email.'<br>';
+          echo '남긴글 = '.$comment.'</p>';
+          $check = "$data_dir/$cnt";
+          echo '<p>check = '.$check.'</p>';
+          */
           $fp = fopen("$data_dir/$cnt", "w");
-          fwrite($fp, "$name\n$password\n$email\n%scomment");
+          fwrite($fp, "$name\n$password\n$email\n$comment");
           fclose($fp);
           echo '<dir class = "form_class"> 방명록에 기록 됨.'.
                '<a href=sj414.html>입력 화면으로 </a>'.

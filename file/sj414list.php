@@ -12,20 +12,19 @@
         <?php
          $data_dir='./data';
          $dir = opendir("$data_dir");
-         while ($temp=readdir($dir)) {
-            if(($temp != '.') && ($temp != '..')) {
+          while ($temp=readdir($dir)) {
+            if (($temp != '.')&&($temp != '..')) {
                 $filename[] = $temp;
             }
-         }
-         closedir($dir);
+          }
+          closedir($dir);
 
          $cnt = count($filename);
          //echo 'cnt = '.$cnt.$filename[0].'<br>';
-         //$cnt = 0;
          echo '<div class="form_class">방명록 갯수 = '.$cnt.'개 <a href=sj414.html>입력 화면으로 </a></div>';
          
          for ($i=$cnt-1; $i >= 0; $i--) { 
-            $data = file("$data_dir/$filename[%i]");
+            $data = file("$data_dir/$filename[$i]");
             $tmp = implode('<br>', $data);
             echo '<div id="list"> 방명록 : '.$i.'<br>'.$tmp.'</div>';
          }
