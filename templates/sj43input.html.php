@@ -1,4 +1,4 @@
-<form action="sj43wirte.php" method="post">
+<form action="sj43write.php" method="post">
     <fieldset id = form_fieldset>
         <legend>아래 내용을 입력하세요.</legend>
         <ul>
