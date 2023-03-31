@@ -9,16 +9,14 @@ try{
   while($row = $result->fetch()){
     $stuName[] = $row['stu_no'].' '.$row['stu_name'].' '.$row['stu_address'];
   }
-  $title = '학생 이름 목록';
+  $title = '학생 이름 목록 2';
   $outString = '';
+
+  ob_start();
+
+  include __DIR__.'/../templates/stuName.html.php';
   
-  foreach($stuName as $sName){
-    $outString .= '<blockquote>';
-    $outString .= '<p>';
-    $outString .= $sName;
-    $outString .= '</p>';
-    $outString .= '</blockquote>';
-  }
+  $outString = ob_get_clean();
 }
 catch(PDOException $e){
   $title = '오류가 발생했습니다.';
