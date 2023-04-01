@@ -19,8 +19,9 @@ if(isset($_POST['sc_no']))
             // $stmt->bindValue(':sc_cpp',  $_POST['sc_cpp']);
             // $stmt->bindValue(':sc_java', $_POST['sc_java']);
             // $stmt->execute();
+            // insertScore($pdo, ['sc_no'=>$_POST['sc_no'],'sc_cpp'=>$_POST['sc_cpp'],'sc_java'=>$_POST['sc_java']]);
 
-            insertScore($pdo, ['sc_no'=>$_POST['sc_no'],'sc_cpp'=>$_POST['sc_cpp'],'sc_java'=>$_POST['sc_java']]);
+            insertData($pdo, 'score', $_POST);
 
             header('location: sj6scoreList.php');
         }

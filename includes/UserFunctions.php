@@ -23,14 +23,25 @@ function myQuery($pdo, $sql, $param = [])
     return $stmt;
 }
 
-function insertScore($pdo, $param)
+// function insertScore($pdo, $param)
+// {
+//     // $sql = 'INSERT INTO `score` SET
+//     //      `sc_no`       = :sc_no,
+//     //      `sc_cpp`      = :sc_cpp,
+//     //      `sc_java`     = :sc_java';
+//     //$param = [':sc_no'=>$_POST['sc_no'],':sc_cpp'=>$_POST['sc_cpp'],'sc_java'=>$_POST['sc_java']];
+//     $sql = 'INSERT INTO `score` SET ';
+//     foreach($param as $key=>$value){
+//         $sql .= '`'.$key.'`= :'.$key.', ';
+//     }
+//     $sql = rtrim($sql, ', ');
+
+//     myQuery($pdo, $sql, $param);
+// }
+
+function insertData($pdo, $table, $param)
 {
-    // $sql = 'INSERT INTO `score` SET
-    //      `sc_no`       = :sc_no,
-    //      `sc_cpp`      = :sc_cpp,
-    //      `sc_java`     = :sc_java';
-    //$param = [':sc_no'=>$_POST['sc_no'],':sc_cpp'=>$_POST['sc_cpp'],'sc_java'=>$_POST['sc_java']];
-    $sql = 'INSERT INTO `score` SET ';
+    $sql = 'INSERT INTO `'.$table.'` SET ';
     foreach($param as $key=>$value){
         $sql .= '`'.$key.'`= :'.$key.', ';
     }
@@ -39,16 +50,28 @@ function insertScore($pdo, $param)
     myQuery($pdo, $sql, $param);
 }
 
-function updateScore($pdo, $param)
+// function updateScore($pdo, $param)
+// {
+//     //$sql = 'UPDATE `score` SET `sc_no` = :sc_no, `sc_cpp` = :sc_cpp, `sc_java` = :sc_java WHERE `sc_id` = :id';
+//     //$param = [':sc_no'=>$_POST['sc_no'], ':sc_cpp'=>$_POST['sc_cpp'], ':sc_java'=>$_POST['sc_java'], ':id'=>$_POST['sc_id']];
+//     $sql = 'UPDATE `score` SET ';
+//     foreach($param as $key=>$value){
+//         $sql .= '`'.$key.'`= :'.$key.', ';
+//     }
+//     $sql = rtrim($sql, ', ');
+
+//     $sql .= ' WHERE `sc_id`=:sc_id';
+
+//     myQuery($pdo, $sql, $param);
+// }
+
+function updateData($pdo, $table, $keyField, $param)
 {
-    //$sql = 'UPDATE `score` SET `sc_no` = :sc_no, `sc_cpp` = :sc_cpp, `sc_java` = :sc_java WHERE `sc_id` = :id';
-    //$param = [':sc_no'=>$_POST['sc_no'], ':sc_cpp'=>$_POST['sc_cpp'], ':sc_java'=>$_POST['sc_java'], ':id'=>$_POST['sc_id']];
     $sql = 'UPDATE `score` SET ';
     foreach($param as $key=>$value){
         $sql .= '`'.$key.'`= :'.$key.', ';
     }
     $sql = rtrim($sql, ', ');
-
     $sql .= ' WHERE `sc_id`=:sc_id';
 
     myQuery($pdo, $sql, $param);
@@ -61,10 +84,17 @@ function selectScore($pdo, $id)
     return $stmt->fetch();
 }
 
-function deleteScore($pdo, $id)
+//function deleteScore($pdo, $id)
+// {
+//     $param = [':sc_id'=>$id];
+//     myQuery($pdo, 'DELETE FROM `score` WHERE `sc_id`=:sc_id', $param);
+// }
+function deleteData($pdo, $table, $keyField, $id)
 {
-    $param = [':sc_id'=>$id];
-    myQuery($pdo, 'DELETE FROM `score` WHERE `sc_id`=:sc_id', $param);
+    $param = [':id'=>$id];
+    $sql = 'DELETE FROM `'.$table.'` WHERE `'.$keyField.'`=:id';
+
+    myQuery($pdo, $sql, $param);
 }
 
 function stuCount($pdo, $no)

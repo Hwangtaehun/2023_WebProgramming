@@ -9,7 +9,8 @@ try{
     // $stmt = $pdo->prepare($sql);
     // $stmt->bindValue(':id', $_POST['sc_id']);
     // $stmt->execute();
-    deleteScore($pdo, $_POST['sc_id']);
+    // deleteScore($pdo, $_POST['sc_id']);
+    deleteData($pdo, 'score', 'sc_id', $_POST['sc_id']);
     header('location: sj6scoreList.php');
 }
 catch (PDOException $e){
