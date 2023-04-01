@@ -1,20 +1,24 @@
+<?php
+
 function selectAllScore($pdo)
 {
     $sql = 'SELECT * FROM `student` INNER JOIN `score` ON `student`.`stu_no` = `score`.`sc_no`';
+    //$sql = 'SELECT * FROM `score`';
     $stmt = myQuery($pdo, $sql);
 
     return $stmt->fetchAll();
 }
 
-function myQuery($pdo, $sql, $param =[])
+function myQuery($pdo, $sql, $param = [])
 {
     $stmt = $pdo->prepare($sql);
-    <!-- foreach($param as $key=>$value){
-        $stmt->bindValue($key, $value);
-    }
-    $stmt->execute(); -->
 
-    $stmt->exectue($param);
+    // foreach($param as $key=>$value){
+    //     $stmt->bindValue($key, $value);
+    // }
+    // $stmt->execute();
+
+    $stmt->execute($param);
 
     return $stmt;
 }
@@ -46,16 +50,16 @@ function selectScore($pdo, $id)
 function deleteScore($pdo, $id)
 {
     $param = [':sc_id'=>$id];
-    myQuery($pdo, 'DELETE FROM `score` WHERE `sc_id`=:sc_id', $param)
+    myQuery($pdo, 'DELETE FROM `score` WHERE `sc_id`=:sc_id', $param);
 }
 
 function stuCount($pdo, $no)
 {
-    <!-- $stmt = $pdo->prepare('SELECT COUNT(*) FROM `student` WHERE `stu_no` = :stu_no');
-    $stmt->bindValue(':stu_no', $no);
-    $stmt->execute(); -->
+    // $stmt = $pdo->prepare('SELECT COUNT(*) FROM `student` WHERE `stu_no` = :stu_no');
+    // $stmt->bindValue(':stu_no', $no);
+    // $stmt->execute();
     $param = [':stu_no'=>$no];
-    $stmt myQuery($pdo, 'SELECT COUNT(*) FROM `student` WHERE `stu_no` = :stu_no', $param);
+    $stmt = myQuery($pdo, 'SELECT COUNT(*) FROM `student` WHERE `stu_no` = :stu_no', $param);
     $row = $stmt->fetch();
     return $row[0];
 }
