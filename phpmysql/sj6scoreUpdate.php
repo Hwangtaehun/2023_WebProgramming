@@ -4,9 +4,9 @@ include_once __DIR__.'/../includes/Dbconnect.php';
 include_once __DIR__.'/../includes/UserFunctions.php';
 
 try{
-    //$pdo = new PDO('mysql:host=192.168.1.30;dbname=test;charset=utf8','sj002','sj4321');
-    $pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8','mysejong','sj4321');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // $pdo = new PDO('mysql:host=192.168.1.30;dbname=test;charset=utf8','sj002','sj4321');
+    // $pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8','mysejong','sj4321');
+    // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     if(isset($_POST['sc_no'])){
         // $sql = 'UPDATE `score` SET `sc_no` = :sc_no, `sc_cpp` = :sc_cpp, `sc_java` = :sc_java WHERE `sc_id` = :id';
         // $stmt = $pdo->prepare($sql);

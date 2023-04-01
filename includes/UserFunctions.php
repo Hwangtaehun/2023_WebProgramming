@@ -89,6 +89,7 @@ function selectScore($pdo, $id)
 //     $param = [':sc_id'=>$id];
 //     myQuery($pdo, 'DELETE FROM `score` WHERE `sc_id`=:sc_id', $param);
 // }
+
 function deleteData($pdo, $table, $keyField, $id)
 {
     $param = [':id'=>$id];
