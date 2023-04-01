@@ -9,8 +9,6 @@
             <li><label for="id_java">주소</label>
                 <input type="text" name="sc_java" id="id_java" value="<?=$row['sc_java']?>"></li>
                 <input type="hidden" name="sc_id" value="<?=$row['sc_id']?>">
-                <input type="hidden" name="sc_av" value="<?=$row['sc_av']?>">
-                <input type="hidden" name="sc_grade" value="<?=$row['sc_grade']?>">
         </ul>
         <div class="form_class"><input type="submit" value="수정"></div>
     </fieldset>

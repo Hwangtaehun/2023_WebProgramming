@@ -4,9 +4,9 @@
         <ul>
             <li><label for="id_no">번호</label>
                 <input type="text" name="sc_no" id="id_no" value=""></li>
-            <li><label for="id_cpp">cpp점수</label>
+            <li><label for="id_cpp">cpp </label>
                 <input type="text" name="sc_cpp" id="id_cpp" value=""></li>
-            <li><label for="id_java">java점수</label>
+            <li><label for="id_java">java</label>
                 <input type="text" name="sc_java" id="id_java" value=""></li>
         </ul>
         <div class = "form_class">
