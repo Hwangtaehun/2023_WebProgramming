@@ -15,7 +15,7 @@ try{
         // $stmt->bindValue(':sc_java', $_POST['sc_java']);
         // $stmt->bindValue(':id', $_POST['sc_id']);
         // $stmt->execute();
-        updateScore($pdo);
+        updateScore($pdo, ['sc_no'=>$_POST['sc_no'], 'sc_cpp'=>$_POST['sc_cpp'], 'sc_java'=>$_POST['sc_java'], 'sc_id'=>$_POST['sc_id']]);
         header('location: sj6scoreList.php');
     }
     else {
