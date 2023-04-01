@@ -7,9 +7,9 @@
             <li><label for="id_name">이름</label>
                 <input type="text" name="stu_name" id="id_name" value=""></li>
             <li><label for="id_addr">주소</label>
-                <input type="text" name="stu_addr" id="id_addr" value=""></li>
+                <input type="text" name="stu_address" id="id_addr" value=""></li>
             <li><label for="id_bday">생일</label>
-                <input type="text" name="stu_bday" id="id_bday" value=""></li>
+                <input type="text" name="stu_birthday" id="id_bday" value=""></li>
         </ul>
         <div class = "form_class">
             <input type="submit" value="입 력">

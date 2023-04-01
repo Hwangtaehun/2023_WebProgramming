@@ -7,9 +7,9 @@
             <li><label for="id_name">이름</label>
                 <input type="text" name="stu_name" id="id_name" value="<?=$row['stu_name']?>"></li>
             <li><label for="id_addr">주소</label>
-                <input type="text" name="stu_addr" id="id_addr" value="<?=$row['stu_address']?>"></li>
+                <input type="text" name="stu_address" id="id_addr" value="<?=$row['stu_address']?>"></li>
             <li><label for="id_bday">생일</label>
-                <input type="text" name="stu_bday" id="id_bday" value="<?=$row['stu_birthday']?>"></li>
+                <input type="text" name="stu_birthday" id="id_bday" value="<?=$row['stu_birthday']?>"></li>
                 <input type="hidden" name="stu_id" value="<?=$row['stu_id']?>">
         </ul>
         <div class="form_class"><input type="submit" value="수정"></div>

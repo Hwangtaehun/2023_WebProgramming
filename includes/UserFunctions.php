@@ -72,7 +72,7 @@ function updateData($pdo, $table, $keyField, $param)
         $sql .= '`'.$key.'`= :'.$key.', ';
     }
     $sql = rtrim($sql, ', ');
-    $sql .= ' WHERE `sc_id`=:sc_id';
+    $sql .= ' WHERE `'.$keyField.'`= :'.$keyField;
 
     myQuery($pdo, $sql, $param);
 }
