@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset = "utf-8">
-        <link rel="stylesheet" herf="../css/sj6form.css">
+        <link rel="stylesheet" href="../css/sj6form.css">
         <title><?=$title?></title>
     </head>
     <body>
@@ -11,11 +11,11 @@
         </header>
         <nav>
             <ul>
-                <li><a herf="sj6index.php">홈</a></li>
-                <li><a herf="sj6stuList.php">수강생 현황</a></li>
-                <li><a herf="sj6stuAdd.php">수강생 입력</a></li>
-                <li><a herf="sj6scoreList.php">점수 보기</a></li>
-                <li><a herf="sj6scoreAdd.php">점수 입력</a></li>
+                <li><a href="sj6index.php">홈</a></li>
+                <li><a href="sj6stuList.php">수강생 현황</a></li>
+                <li><a href="sj6stuAdd.php">수강생 입력</a></li>
+                <li><a href="sj6scoreList.php">점수 보기</a></li>
+                <li><a href="sj6scoreAdd.php">점수 입력</a></li>
             </ul>
         </nav>
         <main>
