@@ -11,7 +11,7 @@
         <form action="sj6scoreDelete.php" method="post">
                 <input type="hidden" name="sc_id" value="<?=$row['sc_id']?>">
                 <input type="submit" value="삭제">
-                <a href="sj6scoreUpdate.php?id=<?=$row['sc_id']?>"><input type="button" value="수정"></a>
+                <a href="sj6scoreAddUpdate.php?id=<?=$row['sc_id']?>"><input type="button" value="수정"></a>
         </form>
         </fieldset>
     </fieldset>

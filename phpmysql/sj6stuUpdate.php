@@ -8,17 +8,17 @@ try{
     // $pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8','mysejong','sj4321');
     // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     if(isset($_POST['stu_no'])){
-        $sql = 'UPDATE `student` SET `stu_no` = :stu_no, `stu_name` = :stu_name, `stu_address` = :stu_address, `stu_birthday` = :stu_birthday WHERE `stu_id` = :id';
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':stu_no', $_POST['stu_no']);
-        $stmt->bindValue(':stu_name', $_POST['stu_name']);
+        //$sql = 'UPDATE `student` SET `stu_no` = :stu_no, `stu_name` = :stu_name, `stu_address` = :stu_address, `stu_birthday` = :stu_birthday WHERE `stu_id` = :id';
+        //$stmt = $pdo->prepare($sql);
+        //$stmt->bindValue(':stu_no', $_POST['stu_no']);
+        //$stmt->bindValue(':stu_name', $_POST['stu_name']);
         //$stmt->bindValue(':stu_addr', $_POST['stu_addr']);
         //$stmt->bindValue(':stu_bday', $_POST['stu_bday']);
-        $stmt->bindValue(':stu_address', $_POST['stu_address']);
-        $stmt->bindValue(':stu_birthday', $_POST['stu_birthday']);
-        $stmt->bindValue(':id', $_POST['stu_id']);
-        $stmt->execute();
-        // updateData($pdo, 'student', 'stu_id', $_POST);
+        //$stmt->bindValue(':stu_address', $_POST['stu_address']);
+        //$stmt->bindValue(':stu_birthday', $_POST['stu_birthday']);
+        //$stmt->bindValue(':id', $_POST['stu_id']);
+        //$stmt->execute();
+        updateData($pdo, 'student', 'stu_id', $_POST);
         header('location: sj6stuList.php');
     }
     else {

@@ -9,6 +9,14 @@ function selectAllScore($pdo)
     return $stmt->fetchAll();
 }
 
+function selectAllStu($pdo)
+{
+    $sql = 'SELECT * FROM `student`';
+    $stmt = myQuery($pdo, $sql);
+
+    return $stmt->fetchAll();
+}
+
 function myQuery($pdo, $sql, $param = [])
 {
     $stmt = $pdo->prepare($sql);
@@ -67,13 +75,14 @@ function insertData($pdo, $table, $param)
 
 function updateData($pdo, $table, $keyField, $param)
 {
-    $sql = 'UPDATE `score` SET ';
+    $sql = 'UPDATE`'.$table.'`SET ';
     foreach($param as $key=>$value){
         $sql .= '`'.$key.'`= :'.$key.', ';
     }
     $sql = rtrim($sql, ', ');
     $sql .= ' WHERE `'.$keyField.'`= :'.$keyField;
 
+    
     myQuery($pdo, $sql, $param);
 }
 
@@ -82,6 +91,13 @@ function selectScore($pdo, $id)
     $param = [':sc_id'=>$id];
     $stmt = myQuery($pdo, 'SELECT * FROM `score` where `sc_id`= :sc_id', $param);
     return $stmt->fetch();
+}
+
+function selectStu($pdo, $id)
+{
+  $param = [':stu_id'=>$id];
+  $stmt = myQuery($pdo, 'SELECT * FROM `student` where `stu_id`= :stu_id', $param);
+  return $stmt->fetch();
 }
 
 //function deleteScore($pdo, $id)

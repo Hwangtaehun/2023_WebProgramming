@@ -1,11 +1,14 @@
 <?php
 try {
+    //pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8','mysejong','sj4321');
     //$pdo = new PDO('mysql:host=192.168.1.30;dbname=test;charset=utf8','sj002','sj4321');
-    $pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8','mysejong','sj4321');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $sql = 'SELECT * FROM `student`';
-    $result = $pdo->query($sql);
+    //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include_once __DIR__.'/../includes/Dbconnect.php';
+    include_once __DIR__.'/../includes/UserFunctions.php';
+    //$sql = 'SELECT * FROM `student`';
+    //$result = $pdo->query($sql);
+    
+    $result = selectAllStu($pdo);
 
     $title = '수강생 현황';
     ob_start();
