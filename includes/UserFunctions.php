@@ -1,21 +1,21 @@
 <?php
 
-function selectAllScore($pdo)
-{
-    $sql = 'SELECT * FROM `student` INNER JOIN `score` ON `student`.`stu_no` = `score`.`sc_no`';
-    //$sql = 'SELECT * FROM `score`';
-    $stmt = myQuery($pdo, $sql);
+// function selectAllScore($pdo)
+// {
+//     $sql = 'SELECT * FROM `student` INNER JOIN `score` ON `student`.`stu_no` = `score`.`sc_no`';
+//     //$sql = 'SELECT * FROM `score`';
+//     $stmt = myQuery($pdo, $sql);
 
-    return $stmt->fetchAll();
-}
+//     return $stmt->fetchAll();
+// }
 
-function selectAllStu($pdo)
-{
-    $sql = 'SELECT * FROM `student`';
-    $stmt = myQuery($pdo, $sql);
+// function selectAllStu($pdo)
+// {
+//     $sql = 'SELECT * FROM `student`';
+//     $stmt = myQuery($pdo, $sql);
 
-    return $stmt->fetchAll();
-}
+//     return $stmt->fetchAll();
+// }
 
 function selectAllData($pdo, $table)
 {
