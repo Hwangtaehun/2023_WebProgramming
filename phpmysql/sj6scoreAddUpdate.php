@@ -21,7 +21,8 @@
     }
     else{
       if(isset($_GET['id'])){
-        $row = selectScore($pdo, $_GET['id']);
+        //$row = selectScore($pdo, $_GET['id']);
+        $row = selectData($pdo, 'score', 'sc_id', $_GET['id']);
         $title2 = ' 수정';
       }
       else{

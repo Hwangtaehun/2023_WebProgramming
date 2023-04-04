@@ -17,6 +17,20 @@ function selectAllStu($pdo)
     return $stmt->fetchAll();
 }
 
+function selectAllData($pdo, $table)
+{
+    if($table == 'student')
+    {
+        $sql = 'SELECT * FROM `student`';
+    }
+    else
+    {
+        $sql = 'SELECT * FROM `student` INNER JOIN `score` ON `student`.`stu_no` = `score`.`sc_no`';
+    }
+    $stmt = myQuery($pdo, $sql);
+    return $stmt->fetchAll();
+}
+
 function myQuery($pdo, $sql, $param = [])
 {
     $stmt = $pdo->prepare($sql);
@@ -86,17 +100,24 @@ function updateData($pdo, $table, $keyField, $param)
     myQuery($pdo, $sql, $param);
 }
 
-function selectScore($pdo, $id)
-{
-    $param = [':sc_id'=>$id];
-    $stmt = myQuery($pdo, 'SELECT * FROM `score` where `sc_id`= :sc_id', $param);
-    return $stmt->fetch();
-}
+// function selectScore($pdo, $id)
+// {
+//     $param = [':sc_id'=>$id];
+//     $stmt = myQuery($pdo, 'SELECT * FROM `score` where `sc_id`= :sc_id', $param);
+//     return $stmt->fetch();
+// }
 
-function selectStu($pdo, $id)
+// function selectStu($pdo, $id)
+// {
+//   $param = [':stu_id'=>$id];
+//   $stmt = myQuery($pdo, 'SELECT * FROM `student` where `stu_id`= :stu_id', $param);
+//   return $stmt->fetch();
+// }
+
+function selectData($pdo, $table, $keyField, $id)
 {
-  $param = [':stu_id'=>$id];
-  $stmt = myQuery($pdo, 'SELECT * FROM `student` where `stu_id`= :stu_id', $param);
+  $param = [':id'=>$id];
+  $stmt = myQuery($pdo, 'SELECT * FROM `'.$table.'` where `'.$keyField.'`= :id', $param);
   return $stmt->fetch();
 }
 

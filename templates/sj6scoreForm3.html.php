@@ -3,8 +3,7 @@
     <legend>아래 내용을 <?=$title2 ?>하세요.</legend>
     <ul><li><label for="id_no">번호</label>
             <input type="text" name="sc_no" id="id_no"
-                   value="<?=row['sc_no'] ?? '' ?>"></li>
-            <!--        value="<?php if(isset($row)) { echo $row['sc_no']; }?>"></li> -->
+                   value="<?php if(isset($row)) { echo $row['sc_no']; }?>"></li>
         <li><label for="id_cpp">cpp </label>
             <input type="text" name="sc_cpp" id="id_cpp"
                     value="<?=$row['sc_cpp'] ?? '' ?>"></li>

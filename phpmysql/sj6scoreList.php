@@ -8,7 +8,8 @@ try {
     // $sql = 'SELECT * FROM `score`';
     // $result = $pdo->query($sql);
 
-    $result = selectAllScore($pdo);
+    //$result = selectAllScore($pdo);
+    $result = selectAllData($pdo, 'score');
 
     $title = '수강생 점수 현황';
     ob_start();

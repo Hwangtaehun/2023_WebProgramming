@@ -8,7 +8,8 @@ try {
     //$sql = 'SELECT * FROM `student`';
     //$result = $pdo->query($sql);
     
-    $result = selectAllStu($pdo);
+    //$result = selectAllStu($pdo);
+    $result = selectAllData($pdo, 'student');
 
     $title = '수강생 현황';
     ob_start();

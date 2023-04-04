@@ -14,11 +14,12 @@
     }
     else{
       if(isset($_GET['id'])){
-        /*$sql = 'SELECT * FROM `student` where `stu_id`='.$_GET['id'];
-        $result = $pdo->query($sql);
-        $row = $result->fetch();*/
+        // $sql = 'SELECT * FROM `student` where `stu_id`='.$_GET['id'];
+        // $result = $pdo->query($sql);
+        // $row = $result->fetch();
         
-        $row = selectStu($pdo, $_GET['id']);
+        //$row = selectStu($pdo, $_GET['id']);
+        $row = selectData($pdo, 'student', 'stu_id', $_GET['id']);
         $title2 = ' 수정';
       }
       else{
