@@ -95,7 +95,6 @@ function updateData($pdo, $table, $keyField, $param)
     }
     $sql = rtrim($sql, ', ');
     $sql .= ' WHERE `'.$keyField.'`= :'.$keyField;
-
     
     myQuery($pdo, $sql, $param);
 }

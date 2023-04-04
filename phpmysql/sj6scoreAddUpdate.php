@@ -1,12 +1,16 @@
 <?php
   include_once __DIR__.'/../includes/Dbconnect.php';
   include_once __DIR__.'/../includes/UserFunctions.php';
+  include_once __DIR__.'/../class/TableManager.php';
   
   try{
+    $obj1 = new TableManager();
+
     if(isset($_POST['sc_id'])){
       if($_POST['sc_id'] == ''){
         if(stuCount($pdo, $_POST['sc_no'])){
-          insertData($pdo, 'score', $_POST);
+          //insertData($pdo, 'score', $_POST);
+          $obj1->insertData($pdo, 'score', $_POST);
           header('location: sj6scoreList.php');
         }
         else {
@@ -15,7 +19,8 @@
         }
       }
       else {
-        updateData($pdo, 'score', 'sc_id', $_POST);
+        //updateData($pdo, 'score', 'sc_id', $_POST);
+        $obj1->updateData($pdo, 'score', 'sc_id', $_POST);
         header('location: sj6scoreList.php');
       }
     }

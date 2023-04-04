@@ -1,14 +1,19 @@
 <?php
   include_once __DIR__.'/../includes/Dbconnect.php';
   include_once __DIR__.'/../includes/UserFunctions.php';
+  include_once __DIR__.'/../class/TableManager.php';
   
   try{
+    //$obj1 = new TableManager();
+
     if(isset($_POST['stu_id'])){
       if($_POST['stu_id'] == ''){
-        insertData($pdo, 'student', $_POST);
+        //insertData($pdo, 'student', $_POST);
+        $obj1->insertData($pdo, 'student', $_POST);
       }
       else {
-        updateData($pdo, 'student', 'stu_id', $_POST);
+        //updateData($pdo, 'student', 'stu_id', $_POST);
+        $obj1->updateData($pdo, 'student', 'stu_id', $_POST);
       }
       header('location: sj6stuList.php');
     }

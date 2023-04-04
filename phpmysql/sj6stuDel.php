@@ -2,6 +2,7 @@
 try{
     include_once __DIR__.'/../includes/Dbconnect.php';
     include_once __DIR__.'/../includes/UserFunctions.php';
+    include_once __DIR__.'/../class/TableManager.php';
     // $pdo = new PDO('mysql:host=192.168.1.30;dbname=test;charset=utf8','sj002','sj4321');
     // $pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8','mysejong','sj4321');
     // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -9,7 +10,9 @@ try{
     // $stmt = $pdo->prepare($sql);
     // $stmt->bindValue(':id', $_POST['stu_id']);
     // $stmt->execute();
-    deleteData($pdo, 'student', 'stu_id', $_POST['stu_id']);
+    //deleteData($pdo, 'student', 'stu_id', $_POST['stu_id']);
+    $obj1 = new TableManager();
+    $obj1->deleteData($pdo, 'student', 'stu_id', $_POST['stu_id']);
     header('location: sj6stuList.php');
 }
 catch (PDOException $e){
