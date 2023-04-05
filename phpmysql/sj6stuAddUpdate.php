@@ -1,19 +1,19 @@
 <?php
   include_once __DIR__.'/../includes/Dbconnect.php';
-  include_once __DIR__.'/../includes/UserFunctions.php';
+  //include_once __DIR__.'/../includes/UserFunctions.php';
   include_once __DIR__.'/../class/TableManager.php';
-  
-  try{
-    //$obj1 = new TableManager();
 
+  $stuTable = new TableManager($pdo, 'student', 'stu_id');
+  
+  try{    
     if(isset($_POST['stu_id'])){
       if($_POST['stu_id'] == ''){
         //insertData($pdo, 'student', $_POST);
-        $obj1->insertData($pdo, 'student', $_POST);
+        $stuTable->insertData($_POST);
       }
       else {
         //updateData($pdo, 'student', 'stu_id', $_POST);
-        $obj1->updateData($pdo, 'student', 'stu_id', $_POST);
+        $stuTable->updateData($_POST);
       }
       header('location: sj6stuList.php');
     }
@@ -24,7 +24,7 @@
         // $row = $result->fetch();
         
         //$row = selectStu($pdo, $_GET['id']);
-        $row = selectData($pdo, 'student', 'stu_id', $_GET['id']);
+        $row = $stuTable->selectID($_GET['id']);
         $title2 = ' 수정';
       }
       else{

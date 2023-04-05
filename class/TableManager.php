@@ -11,10 +11,16 @@ class TableManager
         $this->keyField = $keyField;
     }
 
+    function print()
+    {
+        echo '테이블 이름'.$this->table.'<br>';
+        echo '키 이름'.$this->keyField.'<br>';
+    }
+
     function selectAll()
     {
-        $sql = 'SELECT * FROM `'.$this->$table.'`';
-        $stmt = $this->myQuery($pdo, $sql);
+        $sql = 'SELECT * FROM `'.$this->table.'`';
+        $stmt = $this->myQuery($sql);
         return $stmt->fetchAll();
     }
 
@@ -38,14 +44,14 @@ class TableManager
             $sql .= '`'.$key.'`= :'.$key.', ';
         }
         $sql = rtrim($sql, ', ');
-        this->myQuery($sql, $param);
+        $this->myQuery($sql, $param);
     }
 
     function deleteData($id)
     {
         $param = [':id'=>$id];
         $sql = 'DELETE FROM `'.$this->table.'` WHERE `'.$this->keyField.'`=:id';
-        this->myQuery($sql, $param);
+        $this->myQuery($sql, $param);
     }
 
     function updateData($param){
@@ -55,6 +61,6 @@ class TableManager
         }
         $sql = rtrim($sql, ', ');
         $sql .= ' WHERE `'.$this->keyField.'`= :'.$this->keyField;
-        this->myQuery($sql, $param);
+        $this->myQuery($sql, $param);
     }
 }

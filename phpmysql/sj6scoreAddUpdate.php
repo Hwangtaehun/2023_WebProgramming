@@ -1,16 +1,17 @@
 <?php
   include_once __DIR__.'/../includes/Dbconnect.php';
-  include_once __DIR__.'/../includes/UserFunctions.php';
+  //include_once __DIR__.'/../includes/UserFunctions.php';
   include_once __DIR__.'/../class/TableManager.php';
+
+  $stuTable = new TableManager($pdo, 'student', 'stu_no');
+  $scoreTable = new TableManager($pdo, 'score', 'sc_id');
   
   try{
-    $obj1 = new TableManager();
-
     if(isset($_POST['sc_id'])){
       if($_POST['sc_id'] == ''){
         if(stuCount($pdo, $_POST['sc_no'])){
           //insertData($pdo, 'score', $_POST);
-          $obj1->insertData($pdo, 'score', $_POST);
+          $scoreTable->insertData($_POST);
           header('location: sj6scoreList.php');
         }
         else {
@@ -20,14 +21,14 @@
       }
       else {
         //updateData($pdo, 'score', 'sc_id', $_POST);
-        $obj1->updateData($pdo, 'score', 'sc_id', $_POST);
+        $scoreTable->updateData($_POST);
         header('location: sj6scoreList.php');
       }
     }
     else{
       if(isset($_GET['id'])){
         //$row = selectScore($pdo, $_GET['id']);
-        $row = selectData($pdo, 'score', 'sc_id', $_GET['id']);
+        $row = $scoreTable->selectID($_GET['id']);
         $title2 = ' 수정';
       }
       else{
