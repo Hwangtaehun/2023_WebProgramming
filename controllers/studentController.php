@@ -11,16 +11,15 @@ class StudentController
 
     public function home(){
         $title = '성적 관리';
-        ob_start();
-        include __DIR__.'/../templates/sj6home.html.php';
-        $outString  = ob_get_clean();
-
-        return ['outString'=>$outString, 'title'=>$title];
+        // ob_start();
+        // include __DIR__.'/../templates/sj6home.html.php';
+        // $outString  = ob_get_clean();
+        // return ['outString'=>$outString, 'title'=>$title];
+        return ['tempName'=>'sj6home.html.php', 'title'=>$title];
     }
 
     public function scoreList(){
         $scoreResult = $this->scoreTable->selectAll();
-
         $result=[];
         foreach ($scoreResult as $row) {
             if(!($stuRow = $this->stuTable->selectID($row['sc_no'])))
@@ -35,12 +34,12 @@ class StudentController
                 'sc_grade'=>$row['sc_grade']
             ];
         }
-
         $title = '수강생 점수 현황';
-        ob_start();
-        include __DIR__.'/../templates/sj6scoreList.html.php';
-        $outString = ob_get_clean();
-        return ['outString'=>$outString, 'title'=>$title];
+        // ob_start();
+        // include __DIR__.'/../templates/sj6scoreList.html.php';
+        // $outString = ob_get_clean();
+        // return ['outString'=>$outString, 'title'=>$title];
+        return ['tempName'=>'sj6scoreList.html.php','title'=>$title,'result'=>$result];
     }
 
     public function scoreDelete(){
@@ -57,6 +56,7 @@ class StudentController
               else {
                 $title = '점수 입력';
                 $outString = '<p> 수강생이 없어요.</p>';
+                return ['tempName'=>'sj6notFound.html.php','outString'=>$outString,'title'=>$title];
               }
             }
             else {
@@ -68,25 +68,30 @@ class StudentController
             if(isset($_GET['id'])){
               $row = $this->scoreTable->selectID($_GET['id']);
               $title2 = ' 수정';
+              $title = '점수'.$title2;
+              return ['tempName'=>'sj6scoreForm3.html.php','title'=>$title,'title2'=>$title2,'row'=>$row];
             }
             else{
               $title2 = ' 입력';
+              $title = '점수'.$title2;
+              return ['tempName'=>'sj6scoreForm3.html.php','title'=>$title,'title2'=>$title2];
             }
-            $title = '점수'.$title2;
-            ob_start();
-            include __DIR__.'/../templates/sj6scoreForm3.html.php';
-            $outString = ob_get_clean();
+            // $title = '점수'.$title2;
+            // ob_start();
+            // include __DIR__.'/../templates/sj6scoreForm3.html.php';
+            // $outString = ob_get_clean();
         }
-        return ['outString'=>$outString, 'title'=>$title];
+        //return ['outString'=>$outString, 'title'=>$title];
     }
 
     public function stuList(){
         $result = $this->stuTable->selectAll();
         $title = '수강생 현황';
-        ob_start();
-        include __DIR__.'/../templates/sj6stuList.html.php';
-        $outString = ob_get_clean();
-        return ['outString'=>$outString, 'title'=>$title];
+        // ob_start();
+        // include __DIR__.'/../templates/sj6stuList.html.php';
+        // $outString = ob_get_clean();
+        // return ['outString'=>$outString, 'title'=>$title];
+        return ['tempName'=>'sj6stuList.html.php','title'=>$title,'result'=>$result];
     }
 
     public function stuDelete(){
@@ -108,15 +113,19 @@ class StudentController
             if(isset($_GET['id'])){
               $row = $this->stuTable->selectID($_GET['id']);
               $title2 = ' 수정';
+              $title = '수강생'.$title2;
+              return ['tempName'=>'sj6stuForm3.html.php','title'=>$title,'title2'=>$title2,'row'=>$row];
             }
             else{
               $title2 = ' 입력';
+              $title = '수강생'.$title2;
+              return ['tempName'=>'sj6stuForm3.html.php','title'=>$title,'title2'=>$title2];
             }
-            $title = '수강생'.$title2;
-            ob_start();
-            include __DIR__.'/../templates/sj6stuForm3.html.php';
-            $outString = ob_get_clean();
+            // $title = '수강생'.$title2;
+            // ob_start();
+            // include __DIR__.'/../templates/sj6stuForm3.html.php';
+            // $outString = ob_get_clean();
         }
-        return ['outString'=>$outString, 'title'=>$title];
+        //return ['outString'=>$outString, 'title'=>$title];
     }
 }
