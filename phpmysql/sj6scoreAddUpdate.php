@@ -9,7 +9,8 @@
   try{
     if(isset($_POST['sc_id'])){
       if($_POST['sc_id'] == ''){
-        if(stuCount($pdo, $_POST['sc_no'])){
+        if(($stuTable->selectID($_POST['sc_no']))){
+        //if(stuCount($pdo, $_POST['sc_no'])){
           //insertData($pdo, 'score', $_POST);
           $scoreTable->insertData($_POST);
           header('location: sj6scoreList.php');
