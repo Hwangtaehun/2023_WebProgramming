@@ -14,8 +14,10 @@
                 <li><a href="sj6index.php">홈</a></li>
                 <li><a href="sj6stuList.php">수강생 현황</a></li>
                 <li><a href="sj6stuAddUpdate.php">수강생 입력</a></li>
-                <li><a href="sj6scoreList.php">점수 보기</a></li>
-                <li><a href="sj6scoreAddUpdate.php">점수 입력</a></li>
+                <li><a href="sj6index.php?list">점수 보기</a></li>
+                <li><a href="sj6index.php?add">점수 입력</a></li>
+                <!-- <li><a href="sj6scoreList.php">점수 보기</a></li>
+                <li><a href="sj6scoreAddUpdate.php">점수 입력</a></li> -->
             </ul>
         </nav>
         <main>
