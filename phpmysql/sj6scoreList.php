@@ -2,7 +2,7 @@
 try {
     include_once __DIR__.'/../includes/Dbconnect.php';
     //include_once __DIR__.'/../includes/UserFunctions.php';
-    include_once __DIR__.'/../class/TableManager.php';
+    include_once __DIR__.'/../classes/TableManager.php';
 
     // $pdo = new PDO('mysql:host=192.168.1.30;dbname=test;charset=utf8','sj002','sj4321');
     // $pdo = new PDO('mysql:host=localhost;dbname=test;charset=utf8','mysejong','sj4321');

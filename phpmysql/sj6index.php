@@ -14,7 +14,7 @@ function outPage($page){
 
 try{
     include_once __DIR__.'/../includes/Dbconnect.php';
-    include_once __DIR__.'/../class/TableManager.php';
+    include_once __DIR__.'/../classes/TableManager.php';
     include_once __DIR__.'/../controllers/studentController.php';
 
     $stuTable = new TableManager($pdo, 'student', 'stu_no');
