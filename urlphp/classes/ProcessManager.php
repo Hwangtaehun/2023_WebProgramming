@@ -1,10 +1,10 @@
 <?php
 class ProcessManager{
-  private $m__uri;
+  private $m_uri;
   
   public function __construct($uri){
     $this->m_uri = $uri;
-    echo 'construct : '.$url.'<br>';
+    echo 'construct : '.$uri.'<br>';
   }
   
   private function outPage($page = []){

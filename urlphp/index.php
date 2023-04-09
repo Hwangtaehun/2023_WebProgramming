@@ -1,9 +1,10 @@
 <?php
 try{
   include_once __DIR__.'/classes/ProcessManager.php';
-  $url = Itrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
+  $uri = ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
+  echo $uri.'<br>';
   
-  $ps = new ProcessManager($url);
+  $ps = new ProcessManager($uri);
   $ps->run();
 }
 catch(Exception $ex){
