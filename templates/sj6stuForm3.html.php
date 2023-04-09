@@ -1,6 +1,6 @@
 <form action="" method="post">
   <fieldset id = form_fieldset>
-    <legend>아래 내용을 <?=$page['title2'] ?>하세요.</legend>
+    <legend>아래 내용을 <?=$title2 ?>하세요.</legend>
     <ul><li><label for="id_no">번호</label>
             <input type="text" name="stu_no" id="id_no"
                    value="<?php if(isset($row)) {echo $row['stu_no']; }?>"></li>
@@ -17,7 +17,7 @@
                    value="<?php if(isset($row)) {echo $row['stu_id']; }?>">
     </ul>
       <div class="form_class">
-        <input type="submit" value=<?= $page['title2'] ?>>
+        <input type="submit" value=<?= $title2 ?>>
       </div>
   </fieldset>
 </form>

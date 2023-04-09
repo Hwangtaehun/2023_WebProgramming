@@ -5,10 +5,10 @@
 // $outString  = ob_get_clean();'
 
 function outPage($page){
-    //extract($page);
+    extract($page);
     ob_start();
-    include __DIR__.'/../templates/'.$page['tempName'];
-    //include __DIR__.'/../templates/'.$tempName;
+    //include __DIR__.'/../templates/'.$page['tempName'];
+    include __DIR__.'/../templates/'.$tempName;
     return ob_get_clean();
 }
 
@@ -38,6 +38,11 @@ try{
     
     // ob_start();
     // $outString = $page['outString'];
+
+    extract($page);
+    ob_start();
+    include __DIR__.'/../templates/'.$page['tempName'];
+    $outString = ob_get_clean();
     
     $outString = outPage($page);
 }catch(Exception $ex){

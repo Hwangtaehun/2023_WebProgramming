@@ -1,4 +1,4 @@
-<?php foreach($page['result'] as $row): ?>
+<?php foreach($result as $row): ?>
 <fieldset id="fieldset_row">
     <div id="div_row">
         <?=$row['stu_no']?>
