@@ -62,7 +62,7 @@ class StudentController
             else {
               $this->scoreTable->updateData($_POST);
             }
-            header('location: sj6scoreList.php');
+            header('location: sj6index.php?func=scoreList');
         }
 
         if(isset($_GET['id'])){
