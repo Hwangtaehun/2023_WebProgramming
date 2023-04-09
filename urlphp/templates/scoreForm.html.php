@@ -1,7 +1,7 @@
 <form action="/score/addupdate" method="post">
   <fieldset id = form_fieldset>
-    <legend>¾Æ·¡ ³»¿ëÀ» <?= $title2 ?>ÇÏ¼¼¿ä.</legend>
-    <ul><li><label for="id_no">¹øÈ£</label>
+    <legend>ì•„ëž˜ ë‚´ìš©ì„ <?= $title2 ?>í•˜ì„¸ìš”.</legend>
+    <ul><li><label for="id_no">ë²ˆí˜¸</label>
             <input type="text" name="sc_no" id="id_no"
                    value="<?=$row['sc_no'] ?? ''?>"></li>
         <li><label for="id_cpp">cpp </label>

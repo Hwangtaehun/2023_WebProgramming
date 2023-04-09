@@ -14,7 +14,7 @@ class ScoreController
         $result=[];
         foreach ($scoreResult as $row) {
             if(!($stuRow = $this->stuTable->selectID($row['sc_no'])))
-                $stuRow['stu_name'] = 'ÀÌ¸§¾ø´Ù';
+                $stuRow['stu_name'] = 'ì´ë¦„ì—†ë‹¤';
             $result[] = [
                 'sc_id'=>$row['sc_id'],
                 'sc_no'=>$row['sc_no'],
@@ -25,7 +25,7 @@ class ScoreController
                 'sc_grade'=>$row['sc_grade']
             ];
         }
-        $title = '¼ö°­»ı Á¡¼ö ÇöÈ²';
+        $title = 'ìˆ˜ê°•ìƒ ì ìˆ˜ í˜„í™©';
         return ['tempName'=>'scoreList.html.php','title'=>$title,'result'=>$result];
     }
 
@@ -38,11 +38,11 @@ class ScoreController
         if(isset($_POST['sc_id'])){
             if($_POST['sc_id'] == ''){
               if(($this->stuTable->selectID($_POST['sc_no']))){
-                $this->scoreTable->insertData($_POST);
+                $this->scoreTable->insertData(['sc_no'=>$_POST['sc_no'],'sc_cpp'=>$_POST['sc_cpp'],'sc_java'=>$_POST['sc_java']]);
               }
               else {
-                $title = 'Á¡¼ö ÀÔ·Â';
-                $outString = '<p> ¼ö°­»ıÀÌ ¾ø¾î¿ä.</p>';
+                $title = 'ì ìˆ˜ ì…ë ¥';
+                $outString = '<p> ìˆ˜ê°•ìƒì´ ì—†ì–´ìš”.</p>';
                 return ['tempName'=>'sj6notFound.html.php','outString'=>$outString,'title'=>$title];
               }
             }
@@ -51,18 +51,16 @@ class ScoreController
             }
             header('location: score/list');
         }
+        if(isset($_GET['id'])){
+          $row = $this->scoreTable->selectID($_GET['id']);
+          $title2 = ' ìˆ˜ì •';
+          $title = 'ì ìˆ˜'.$title2;
+          return ['tempName'=>'scoreForm.html.php','title'=>$title,'title2'=>$title2,'row'=>$row];
+        }
         else{
-            if(isset($_GET['id'])){
-              $row = $this->scoreTable->selectID($_GET['id']);
-              $title2 = ' ¼öÁ¤';
-              $title = 'Á¡¼ö'.$title2;
-              return ['tempName'=>'scoreForm.html.php','title'=>$title,'title2'=>$title2,'row'=>$row];
-            }
-            else{
-              $title2 = ' ÀÔ·Â';
-              $title = 'Á¡¼ö'.$title2;
-              return ['tempName'=>'scoreForm.html.php','title'=>$title,'title2'=>$title2];
-            }
+          $title2 = ' ì…ë ¥';
+          $title = 'ì ìˆ˜'.$title2;
+          return ['tempName'=>'scoreForm.html.php','title'=>$title,'title2'=>$title2];
         }
     }
 }

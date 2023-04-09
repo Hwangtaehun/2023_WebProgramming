@@ -11,18 +11,18 @@
         </header>
         <nav>
             <ul>
-                <li><a href="/">È¨</a></li>
-                <li><a href="/student/list">¼ö°­»ý ÇöÈ²</a></li>
-                <li><a href="/student/addupdate">¼ö°­»ý ÀÔ·Â</a></li>
-                <li><a href="/score/list">Á¡¼ö º¸±â</a></li>
-                <li><a href="/score/addupdate">Á¡¼ö ÀÔ·Â</a></li>
+                <li><a href="/">í™ˆ</a></li>
+                <li><a href="/student/list">ìˆ˜ê°•ìƒ í˜„í™©</a></li>
+                <li><a href="/student/addupdate">ìˆ˜ê°•ìƒ ìž…ë ¥</a></li>
+                <li><a href="/score/list">ì ìˆ˜ ë³´ê¸°</a></li>
+                <li><a href="/score/addupdate">ì ìˆ˜ ìž…ë ¥</a></li>
             </ul>
         </nav>
         <main>
             <?= $outString ?>
         </main>
         <footer>
-            <h4>¼¼Á¾ ÄÄÇ»ÅÍ ÇÐ¿ø ÃæºÏ Ã»ÁÖ½Ã »çÃ¢µ¿</h4>
+            <h4>ì„¸ì¢… ì»´í“¨í„° í•™ì› ì¶©ë¶ ì²­ì£¼ì‹œ ì‚¬ì°½ë™</h4>
         </footer>
     </body>
 </html>

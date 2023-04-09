@@ -10,13 +10,13 @@ class StudentController
     }
 
     public function home(){
-        $title = '¼ºÀû °ü¸®';
+        $title = 'ì„±ì  ê´€ë¦¬';
         return ['tempName'=>'home.html.php', 'title'=>$title];
     }
 
     public function list(){
         $result = $this->stuTable->selectAll();
-        $title = '¼ö°­»ý ÇöÈ²';
+        $title = 'ìˆ˜ê°•ìƒ í˜„í™©';
         return ['tempName'=>'stuList.html.php','title'=>$title,'result'=>$result];
     }
 
@@ -28,25 +28,23 @@ class StudentController
     public function addupdate(){
         if(isset($_POST['stu_id'])){
             if($_POST['stu_id'] == ''){
-              $this->stuTable->insertData($_POST);
+              $this->stuTable->insertData(['stu_no'=>$_POST['stu_no'],'stu_name'=>$_POST['stu_name'],'stu_address'=>$_POST['stu_address'],'stu_birthday'=>$_POST['stu_birthday']]);
             }
             else {
               $this->stuTable->updateData($_POST);
             }
             header('location: /student/list');
         }
+        if(isset($_GET['id'])){
+          $row = $this->stuTable->selectID($_GET['id']);
+          $title2 = ' ìˆ˜ì •';
+          $title = 'ìˆ˜ê°•ìƒ'.$title2;
+          return ['tempName'=>'stuForm.html.php','title'=>$title,'title2'=>$title2,'row'=>$row];
+        }
         else{
-            if(isset($_GET['id'])){
-              $row = $this->stuTable->selectID($_GET['id']);
-              $title2 = ' ¼öÁ¤';
-              $title = '¼ö°­»ý'.$title2;
-              return ['tempName'=>'stuForm.html.php','title'=>$title,'title2'=>$title2,'row'=>$row];
-            }
-            else{
-              $title2 = ' ÀÔ·Â';
-              $title = '¼ö°­»ý'.$title2;
-              return ['tempName'=>'stuForm.html.php','title'=>$title,'title2'=>$title2];
-            }
+          $title2 = ' ìž…ë ¥';
+          $title = 'ìˆ˜ê°•ìƒ'.$title2;
+          return ['tempName'=>'stuForm.html.php','title'=>$title,'title2'=>$title2];
         }
     }
 }

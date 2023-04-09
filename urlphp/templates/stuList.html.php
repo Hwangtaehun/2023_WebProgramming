@@ -8,8 +8,8 @@
     </div>
     <form action="/student/delete" method="post">
             <input type="hidden" name="stu_no" value="<?=$row['stu_no']?>">
-            <input type="submit" value="»èÁ¦">
-            <a href="/student/addupdate?id=<?=$row['stu_no']?>"><input type="button" value="¼öÁ¤"></a>
+            <input type="submit" value="ì‚­ì œ">
+            <a href="/student/addupdate?id=<?=$row['stu_no']?>"><input type="button" value="ìˆ˜ì •"></a>
         </form>
     </fieldset>
 </fieldset>

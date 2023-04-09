@@ -10,8 +10,8 @@
         </div>
         <form action="/score/delete" method="post">
                 <input type="hidden" name="sc_id" value="<?=$row['sc_id']?>">
-                <input type="submit" value="»èÁ¦">
-                <a href="/score/addupdate?id=<?=$row['sc_id']?>"><input type="button" value="¼öÁ¤"></a>
+                <input type="submit" value="ì‚­ì œ">
+                <a href="/score/addupdate?id=<?=$row['sc_id']?>"><input type="button" value="ìˆ˜ì •"></a>
         </form>
         </fieldset>
     </fieldset>

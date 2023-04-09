@@ -7,5 +7,5 @@ try{
   $ps->run();
 }
 catch(Exception $ex){
-  $outString='<p>¿À·ù¹ß»ý:'.$e->getMessage().$e->getFile().'Çà:'.$e->getLine().'</p>';
+  $outString='<p>ì˜¤ë¥˜ë°œìƒ:'.$e->getMessage().$e->getFile().'í–‰:'.$e->getLine().'</p>';
 }
