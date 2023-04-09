@@ -1,9 +1,8 @@
 <?php
 try{
   include_once __DIR__.'/classes/ProcessManager.php';
-  $uri = ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
-  echo $uri.'<br>';
-  
+  $uri = ltrim(strtok($_SERVER['REQUEST_URI'], '?'), 'phpWorkspace/urlphp/');
+    
   $ps = new ProcessManager($uri);
   $ps->run();
 }

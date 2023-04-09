@@ -7,6 +7,7 @@ class StudentController
     public function __construct(TableManager $stuTable, TableManager $scoreTable){
         $this->stuTable   = $stuTable;
         $this->scoreTable = $scoreTable;
+        echo 'StudentController클래스 생성<br>';
     }
 
     public function home(){
