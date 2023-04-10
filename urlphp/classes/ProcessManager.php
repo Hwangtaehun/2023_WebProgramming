@@ -16,7 +16,7 @@ class ProcessManager{
   
   public function run(){
     $page = $this->makePage();
-    $tilte = $page['title'];
+    $title = $page['title'];
     $outString = $this->outPage($page);
     
     include __DIR__.'/../templates/layout.html.php';
