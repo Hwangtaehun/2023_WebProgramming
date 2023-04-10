@@ -10,7 +10,6 @@
             <input type="hidden" name="stu_no" value="<?=$row['stu_no']?>">
             <input type="submit" value="삭제">
             <a href="sj6index.php?func=stuAddUpdate&id=<?=$row['stu_no']?>"><input type="button" value="수정"></a>
-        </form>
-    </fieldset>
+    </form>
 </fieldset>
 <?php endforeach; ?>
