@@ -65,7 +65,7 @@ class ProcessManager{
     // $uris = explode('/', $this->m_uri);
     // $funcName = $uris[1];
     // $className = ucfirst($uris[0]).'Controller';
-    // include __DIR__.'/../controllers/'.$className.'php';
+    // include __DIR__.'/../controllers/'.$className.'.php';
     // $controller = new $className($stuTable, $scoreTable);
     // $page = $controller->$funcName();
     
