@@ -51,7 +51,8 @@ class StudentController
         if(isset($_POST['sc_id'])){
             if($_POST['sc_id'] == ''){
               if(($this->stuTable->selectID($_POST['sc_no']))){
-                $this->scoreTable->insertData(['sc_no'=>$_POST['sc_no'],'sc_cpp'=>$_POST['sc_cpp'],'sc_java'=>$_POST['sc_java']]);
+                //$this->scoreTable->insertData(['sc_no'=>$_POST['sc_no'],'sc_cpp'=>$_POST['sc_cpp'],'sc_java'=>$_POST['sc_java']]);
+                $this->scoreTable->insertData($_POST);
               }
               else {
                 $title = '점수 입력';
@@ -108,14 +109,15 @@ class StudentController
     }
 
     public function stuDelete(){
-        $this->stuTable->deleteData($_POST['stu_id']);
+        $this->stuTable->deleteData($_POST['stu_no']);
         header('location: sj6index.php?func=stuList');
     }
 
     public function stuAddUpdate(){
         if(isset($_POST['stu_id'])){
             if($_POST['stu_id'] == ''){
-              $this->stuTable->insertData(['stu_no'=>$_POST['stu_no'],'stu_name'=>$_POST['stu_name'],'stu_address'=>$_POST['stu_address'],'stu_birthday'=>$_POST['stu_birthday']]);
+              //$this->stuTable->insertData(['stu_no'=>$_POST['stu_no'],'stu_name'=>$_POST['stu_name'],'stu_address'=>$_POST['stu_address'],'stu_birthday'=>$_POST['stu_birthday']]);
+              $this->stuTable->insertData($_POST);
             }
             else {
               $this->stuTable->updateData($_POST);
