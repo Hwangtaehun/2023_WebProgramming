@@ -4,7 +4,7 @@ class ProcessManager{
   
   public function __construct($uri){
     $this->m_uri = $uri;
-    echo 'construct : '.$uri.'<br>';
+    //echo 'construct : '.$uri.'<br>';
   }
   
   private function outPage($page = []){
@@ -28,46 +28,46 @@ class ProcessManager{
     $stuTable = new TableManager($pdo, 'student', 'stu_no');
     $scoreTable = new TableManager($pdo, 'score', 'sc_id');
 
-    include __DIR__.'/../controllers/StudentControl.php';
-    include __DIR__.'/../controllers/ScoreControl.php';
-    if($this->m_uri == 'student/list'){
-      $controller = new StudentController($stuTable, $scoreTable);
-      $page = $controller->list();
-    }
-    else if($this->m_uri == 'student/addupdate'){
-      $controller = new StudentController($stuTable, $scoreTable);
-      $page = $controller->addupdate();
-    }
-    else if($this->m_uri == 'student/delete'){
-      $controller = new StudentController($stuTable, $scoreTable);
-      $page = $controller->delete();
-    }
-    else if($this->m_uri == 'score/list'){
-      $controller = new ScoreController($stuTable, $scoreTable);
-      $page = $controller->list();
-    }
-    else if($this->m_uri == 'score/addupdate'){
-      $controller = new ScoreController($stuTable, $scoreTable);
-      $page = $controller->addupdate();
-    }
-    else if($this->m_uri == 'score/delete'){
-      $controller = new ScoreController($stuTable, $scoreTable);
-      $page = $controller->delete();
-    }
-    else{
-      $controller = new StudentController($stuTable, $scoreTable);
-      $page = $controller->home();
-    }
-    
-    // if($this->m_uri == '' || $this->m_uri == 'index.php'){
-    //   $this->m_uri = 'student/home';
+    // include __DIR__.'/../controllers/StudentControl.php';
+    // include __DIR__.'/../controllers/ScoreControl.php';
+    // if($this->m_uri == 'student/list'){
+    //   $controller = new StudentController($stuTable, $scoreTable);
+    //   $page = $controller->list();
     // }
-    // $uris = explode('/', $this->m_uri);
-    // $funcName = $uris[1];
-    // $className = ucfirst($uris[0]).'Controller';
-    // include __DIR__.'/../controllers/'.$className.'.php';
-    // $controller = new $className($stuTable, $scoreTable);
-    // $page = $controller->$funcName();
+    // else if($this->m_uri == 'student/addupdate'){
+    //   $controller = new StudentController($stuTable, $scoreTable);
+    //   $page = $controller->addupdate();
+    // }
+    // else if($this->m_uri == 'student/delete'){
+    //   $controller = new StudentController($stuTable, $scoreTable);
+    //   $page = $controller->delete();
+    // }
+    // else if($this->m_uri == 'score/list'){
+    //   $controller = new ScoreController($stuTable, $scoreTable);
+    //   $page = $controller->list();
+    // }
+    // else if($this->m_uri == 'score/addupdate'){
+    //   $controller = new ScoreController($stuTable, $scoreTable);
+    //   $page = $controller->addupdate();
+    // }
+    // else if($this->m_uri == 'score/delete'){
+    //   $controller = new ScoreController($stuTable, $scoreTable);
+    //   $page = $controller->delete();
+    // }
+    // else{
+    //   $controller = new StudentController($stuTable, $scoreTable);
+    //   $page = $controller->home();
+    // }
+    
+    if($this->m_uri == '' || $this->m_uri == 'index.php'){
+      $this->m_uri = 'student/home';
+    }
+    $uris = explode('/', $this->m_uri);
+    $funcName = $uris[1];
+    $className = ucfirst($uris[0]).'Control';
+    include __DIR__.'/../controllers/'.$className.'.php';
+    $controller = new $className($stuTable, $scoreTable);
+    $page = $controller->$funcName();
     
     return $page;
   }
