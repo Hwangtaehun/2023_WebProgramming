@@ -28,8 +28,8 @@ class ProcessManager{
     $stuTable = new TableManager($pdo, 'student', 'stu_no');
     $scoreTable = new TableManager($pdo, 'score', 'sc_id');
 
-    include __DIR__.'/../controllers/StudentController.php';
-    include __DIR__.'/../controllers/ScoreController.php';
+    include __DIR__.'/../controllers/StudentControl.php';
+    include __DIR__.'/../controllers/ScoreControl.php';
     if($this->m_uri == 'student/list'){
       $controller = new StudentController($stuTable, $scoreTable);
       $page = $controller->list();
@@ -56,7 +56,7 @@ class ProcessManager{
     }
     else{
       $controller = new StudentController($stuTable, $scoreTable);
-      $page = controller->home();
+      $page = $controller->home();
     }
     
     // if($this->m_uri == '' || $this->m_uri == 'index.php'){
