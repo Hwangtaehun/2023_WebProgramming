@@ -1,5 +1,5 @@
 <?php
-namespace Sjframe;
+namespace SjFrame;
 class TableManager
 {
     private $pdo;
