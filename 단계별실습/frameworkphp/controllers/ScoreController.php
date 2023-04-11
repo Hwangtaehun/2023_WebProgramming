@@ -3,11 +3,10 @@ class ScoreController
 {
     private $stuTable;
     private $scoreTable;
-    
+
     public function __construct(TableManager $stuTable, TableManager $scoreTable){
-        $this->stuTable   = $stuTable;
-        $this->scoreTable = $scoreTable;
-        echo 'ScoreController클래스 생성<br>';
+      $this->stuTable = $stuTable;
+      $this->scoreTable = $scoreTable;
     }
 
     public function list(){
@@ -32,7 +31,7 @@ class ScoreController
 
     public function delete(){
         $this->scoreTable->deleteData($_POST['sc_id']);
-        header('location: score/list');
+        header('location: /score/list');
     }
 
     public function addupdate(){
@@ -50,7 +49,7 @@ class ScoreController
             else {
               $this->scoreTable->updateData($_POST);
             }
-            header('location: score/list');
+            header('location: /score/list');
         }
         if(isset($_GET['id'])){
           $row = $this->scoreTable->selectID($_GET['id']);
