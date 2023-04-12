@@ -7,6 +7,6 @@ try{
   $ps = new \SjFrame\ProcessManager($uri, new \Student\StudentPage($uri));
   $ps->run();
 }
-catch(Exception $ex){
-  $outString='<p>오류발생:'.$e->getMessage().$e->getFile().'행:'.$e->getLine().'</p>';
+catch(Exception $e){
+  $outString='<p>오류발생:'.$e->getMessage().$e->getFile().' 행: '.$e->getLine().'</p>';
 }
