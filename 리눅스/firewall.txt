@@ -6,4 +6,6 @@ firewall-cmd --zone=public --list-all //열린 포트 확인
 553 Could not create file 뜨면
 setsebool -P allow_ftpd_full_access on
 
+홈디렉토리 변경: vi /etc/passwd
+
 아파치 홈디렉토리: /var/www/html/
