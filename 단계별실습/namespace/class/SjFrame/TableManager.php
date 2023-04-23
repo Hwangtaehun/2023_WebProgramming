@@ -6,7 +6,7 @@ class TableManager
     private $table;
     private $keyField;
 
-    public function __construct(PDO $pdo, string $table, string $keyField){
+    public function __construct(\PDO $pdo, string $table, string $keyField){
         $this->pdo      = $pdo;
         $this->table    = $table;
         $this->keyField = $keyField;
