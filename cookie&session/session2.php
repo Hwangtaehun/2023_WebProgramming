@@ -7,10 +7,10 @@
         echo 'DB 접속 오류 : '.$e;
     }
 
-    // $hstr1 = password_hash('sj4321', PASSWORD_DEFAULT);
-    // $sql = "INSERT INTO `author`(`userid`, `name`, `password`, `email`)
-    //         VALUES ('sjtest5', 'sejong5', '$hstr1', 'ff@sjedu.com')";
-    // $pdo->exec($sql);
+    $hstr1 = password_hash('sj4321', PASSWORD_DEFAULT);
+    $sql = "INSERT INTO `author`(`userid`, `name`, `password`, `email`)
+            VALUES ('sjtest5', 'sejong5', '$hstr1', 'ff@sjedu.com')";
+    $pdo->exec($sql);
     
     $_POST['userid'] = 'sjtest5';
     $_POST['password'] = password_hash('sj4321', PASSWORD_DEFAULT);
