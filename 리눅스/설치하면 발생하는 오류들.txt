@@ -9,3 +9,8 @@ setsebool -P allow_ftpd_full_access on
 홈디렉토리 변경: vi /etc/passwd
 
 아파치 홈디렉토리: /var/www/html/
+
+.htaccess 인식 불가
+vi/etc/httpd/conf/httpd.conf
+.htaccess 찾고 AllowOverride를 All로 변경
+systemctl restart httpd
