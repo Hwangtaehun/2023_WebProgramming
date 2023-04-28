@@ -14,3 +14,15 @@ setsebool -P allow_ftpd_full_access on
 vi/etc/httpd/conf/httpd.conf
 .htaccess 찾고 AllowOverride를 All로 변경
 systemctl restart httpd
+
+Apapche프로젝트 경로 수정하기
+원하는 경로에 폴더생성 -> mkdir -p /PROJECT/httpd/
+이동해서 테스트 파일 생성 -> cd /PROJECT/httpd/ -> vi index.html
+
+홈디렉토리 변경
+cd /etc/httpd/comf/httpd.conf
+vi httpd.conf
+DocumentRoot "/var/www/html" -> DocumentRoot "/PROJECT/httpd/"
+<Directory "/var/www/html"> -> <Directory "/PROJECT/httpd/">
+변경 후 저장
+systemctl restart httpd
