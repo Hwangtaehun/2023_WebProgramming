@@ -28,16 +28,16 @@ CREATE TABLE `address`
     `ri`             VARCHAR(20) NULL,
     `dong_hj`        VARCHAR(30) NULL,
     `mount_yn`       VARCHAR(1) NULL,
-    `jibun1 `        VARCHAR(4) NULL,
+    `jibun1`        VARCHAR(4) NULL,
     `eupmyundong_no` VARCHAR(2) NULL,
     `jibun2`         VARCHAR(4) NULL,
     `zipcode_old`    VARCHAR(7) NULL,
     `zipcode_seq`    VARCHAR(3) NULL,
-    `add_no`         INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+    `add_no`         INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 CREATE TABLE `libaray` (
-  `lib_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `lib_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `lib_name` VARCHAR(10) NOT NULL,
   `lib_date` DATE NOT NULL,
   `add_no` INTEGER,
@@ -46,7 +46,7 @@ CREATE TABLE `libaray` (
 ); 
 
 CREATE TABLE `book` (
-  `book_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `book_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `book_name` VARCHAR(20) NOT NULL,
   `book_author` VARCHAR(20) NOT NULL,
   `book_publish` VARCHAR(20) NOT NULL,
@@ -55,13 +55,13 @@ CREATE TABLE `book` (
 );
 
 CREATE TABLE `kind` (
-  `kind_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `kind_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `kind_num` INTEGER,
-  `kind_name` VARCHAR(20),
+  `kind_name` VARCHAR(20)
 );
 
 CREATE TABLE `member` (
-  `mem_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `mem_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `mem_name` VARCHAR(20),
   `mem_id` VARCHAR(20) UNIQUE,
   `mem_pw` VARCHAR(20),
@@ -73,7 +73,7 @@ CREATE TABLE `member` (
 );
 
 CREATE TABLE `material` (
-  `mat_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `mat_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `lib_no` INTEGER,
   `book_no` INTEGER,
   `kind_no` INTEGER,
@@ -85,7 +85,7 @@ CREATE TABLE `material` (
 );
 
 CREATE TABLE `reservation` (
-  `res_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `res_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `res_date` DATE,
   `mem_no` INTEGER,
   `mat_no` INTEGER,
@@ -94,7 +94,7 @@ CREATE TABLE `reservation` (
 );
 
 CREATE TABLE `lent` (
-  `len_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `len_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `mem_no` INTEGER,
   `mat_no` INTEGER,
   `len_date` DATE,
@@ -107,24 +107,24 @@ CREATE TABLE `lent` (
 );
 
 CREATE TABLE `overdue` (
-  `due_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `due_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `due_exp` DATE,
-  `len_no` INTEGER
+  `len_no` INTEGER,
   FOREIGN KEY (`len_no`) REFERENCES `lent`(`len_no`)
 );
 
 CREATE TABLE `place` (
-  `pla_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `pla_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `len_no` INTEGER,
   `lib_no_len` INTEGER,
   `lib_no_re` INTEGER,
   FOREIGN KEY (`len_no`) REFERENCES `lent`(`len_no`),
   FOREIGN KEY (`lib_no_len`) REFERENCES `libaray`(`lib_no`),
   FOREIGN KEY (`lib_no_re`) REFERENCES `libaray`(`lib_no`)
-)
+);
 
 CREATE TABLE `delivery` (
-  `del_no` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `del_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `mem_no` INTEGER,
   `mat_no` INTEGER,
   `lib_no_arr` INTEGER,
@@ -133,4 +133,4 @@ CREATE TABLE `delivery` (
   FOREIGN KEY (`mem_no`) REFERENCES `member`(`mem_no`),
   FOREIGN KEY (`mat_no`) REFERENCES `material`(`mat_no`),
   FOREIGN KEY (`lib_no_arr`) REFERENCES `libaray`(`lib_no`)
-)
+);
