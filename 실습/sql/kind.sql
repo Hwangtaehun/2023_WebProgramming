@@ -1,3 +1,7 @@
+SET FOREIGN_KEY_CHECKS = 0;
+TURNCATE IF EXISTS `kind`; 
+SET FOREIGN_KEY_CHECKS = 1;
+
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('000', '총류');
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('100', '철학');
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('200', '종교');
@@ -441,5 +445,91 @@ INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('376', '중등교육');
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('377', '대학, 전문, 고등 교육');
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('378', '평생 교육');
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('379', '특수 교육');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('381', '의식주의 풍습');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('382', '연령별, 성별, 신분별, 사회계층의 풍습');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('383', '사회생활의 풍습');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('384', '관혼상제');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('385', '예절');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('386', '축제, 세시풍속');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('388', '민속학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('389', '문화인류학');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('391', '군사행정');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('392', '전략, 전술');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('393', '군사 교육 및 훈련');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('394', '군사 시설 및 장비');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('395', '군특수기술근무');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('396', '육군');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('397', '해군');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('398', '공군');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('399', '고대병법');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('401', '철학 및 이론');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('402', '잡저(편람, 제표, 서지, 인명록)');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('403', '사전, 백과사전');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('404', '강연집, 수필집, 연설문집');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('405', '연속간행물');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('406', '학회, 단체, 기관, 회의');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('407', '지도법, 연구법 및 교육, 교육자료');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('408', '전집, 총서');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('409', '과학사');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('411', '산수');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('412', '대수학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('413', '통계학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('414', '해석학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('415', '기하학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('416', '위상수학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('417', '삼각법');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('418', '해석기하학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('419', '기타 산법');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('421', '교체역학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('422', '유체역학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('423', '기체역학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('424', '음향학, 진동학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('425', '광학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('426', '열학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('427', '전기학 및 전자학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('428', '자기');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('429', '현대물리학');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('431', '이론화학과 물리화학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('432', '화학 실험실, 기기, 시설');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('433', '분석화학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('434', '합성화학 일반');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('435', '무기화학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('436', '금속원소와 그화합물');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('437', '유기화학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('438', '고리형화합물');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('439', '고분자화합물과 기타 유기물');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('441', '이론천문학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('442', '설지천문학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('443', '기술천문학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('445', '지구');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('446', '측지학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('447', '항해천문학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('448', '역법, 측시법');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('449', '각국의 역');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('451', '지구물리학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('452', '지형학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('453', '기상학, 기후학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('454', '해양학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('455', '구조지질학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('456', '지사학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('457', '고생물학(화석학)');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('458', '응요지질학 일반 및 광상학');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('459', '암석학');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('46', '');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('47', '');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('48', '');
+
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('49', '');
 
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('', '');
