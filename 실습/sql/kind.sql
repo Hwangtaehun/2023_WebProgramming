@@ -1,6 +1,6 @@
-SET FOREIGN_KEY_CHECKS = 0;
-TURNCATE IF EXISTS `kind`; 
-SET FOREIGN_KEY_CHECKS = 1;
+-- SET FOREIGN_KEY_CHECKS = 0;
+-- TURNCATE IF EXISTS `kind`; 
+-- SET FOREIGN_KEY_CHECKS = 1;
 
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('000', '총류');
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('100', '철학');
