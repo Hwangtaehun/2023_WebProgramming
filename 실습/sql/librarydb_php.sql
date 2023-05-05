@@ -95,8 +95,8 @@ CREATE TABLE `delivery` (
 
 CREATE TABLE `kind` (
   `kind_no` int(11) NOT NULL,
-  `kind_num` int(11) DEFAULT NULL,
-  `kind_name` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `kind_num` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kind_name` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

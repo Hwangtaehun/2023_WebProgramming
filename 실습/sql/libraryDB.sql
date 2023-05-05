@@ -47,7 +47,7 @@ CREATE TABLE `library` (
 
 CREATE TABLE `book` (
   `book_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `book_name` VARCHAR(20) NOT NULL,
+  `book_name` VARCHAR(50) NOT NULL,
   `book_author` VARCHAR(20) NOT NULL,
   `book_publish` VARCHAR(20) NOT NULL,
   `book_price` INTEGER DEFAULT 7000 CHECK(`book_price` >= 6000),
@@ -56,15 +56,15 @@ CREATE TABLE `book` (
 
 CREATE TABLE `kind` (
   `kind_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `kind_num` INTEGER,
-  `kind_name` VARCHAR(20)
+  `kind_num` VARCHAR(10) UNIQUE,
+  `kind_name` VARCHAR(30)
 );
 
 CREATE TABLE `member` (
   `mem_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `mem_name` VARCHAR(20),
+  `mem_name` VARCHAR(20) NOT NULL,
   `mem_id` VARCHAR(20) UNIQUE,
-  `mem_pw` VARCHAR(20),
+  `mem_pw` VARCHAR(20) NOT NULL,
   `mem_lent` INTEGER,
   `mem_ban` INTEGER,
   `add_no` INTEGER,
