@@ -42,7 +42,7 @@ CREATE TABLE `library` (
   `lib_date` DATE NOT NULL,
   `add_no` INTEGER,
   `lib_detail` VARCHAR(50),
-  FOREIGN KEY (`add_no`) REFERENCES `address`(`add_no`)
+  FOREIGN KEY (`add_no`) REFERENCES `address`(`add_no`) ON DELETE SET NULL ON UPDATE CASCADE
 ); 
 
 CREATE TABLE `book` (
@@ -79,9 +79,9 @@ CREATE TABLE `material` (
   `kind_no` INTEGER,
   `mat_many` VARCHAR(10),
   `mat_overlap` VARCHAR(10),
-  FOREIGN KEY (`lib_no`) REFERENCES `library`(`lib_no`),
-  FOREIGN KEY (`book_no`) REFERENCES `book`(`book_no`),
-  FOREIGN KEY (`kind_no`) REFERENCES `kind`(`kind_no`)
+  FOREIGN KEY (`lib_no`) REFERENCES `library`(`lib_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (`book_no`) REFERENCES `book`(`book_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (`kind_no`) REFERENCES `kind`(`kind_no`) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE `reservation` (
@@ -89,8 +89,8 @@ CREATE TABLE `reservation` (
   `res_date` DATE,
   `mem_no` INTEGER,
   `mat_no` INTEGER,
-  FOREIGN KEY (`mem_no`) REFERENCES `member`(`mem_no`),
-  FOREIGN KEY (`mat_no`) REFERENCES `material`(`mat_no`)
+  FOREIGN KEY (`mem_no`) REFERENCES `member`(`mem_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (`mat_no`) REFERENCES `material`(`mat_no`) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE `lent` (
@@ -102,15 +102,15 @@ CREATE TABLE `lent` (
   `len_re_date` DATE,
   `len_re_st` INTEGER,
   `len_memo` VARCHAR(30),
-  FOREIGN KEY (`mem_no`) REFERENCES `member`(`mem_no`),
-  FOREIGN KEY (`mat_no`) REFERENCES `material`(`mat_no`)
+  FOREIGN KEY (`mem_no`) REFERENCES `member`(`mem_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (`mat_no`) REFERENCES `material`(`mat_no`) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE `overdue` (
   `due_no` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `due_exp` DATE,
   `len_no` INTEGER,
-  FOREIGN KEY (`len_no`) REFERENCES `lent`(`len_no`)
+  FOREIGN KEY (`len_no`) REFERENCES `lent`(`len_no`) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE `place` (
@@ -118,9 +118,9 @@ CREATE TABLE `place` (
   `len_no` INTEGER,
   `lib_no_len` INTEGER,
   `lib_no_re` INTEGER,
-  FOREIGN KEY (`len_no`) REFERENCES `lent`(`len_no`),
-  FOREIGN KEY (`lib_no_len`) REFERENCES `library`(`lib_no`),
-  FOREIGN KEY (`lib_no_re`) REFERENCES `library`(`lib_no`)
+  FOREIGN KEY (`len_no`) REFERENCES `lent`(`len_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (`lib_no_len`) REFERENCES `library`(`lib_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (`lib_no_re`) REFERENCES `library`(`lib_no`) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE `delivery` (
@@ -130,7 +130,7 @@ CREATE TABLE `delivery` (
   `lib_no_arr` INTEGER,
   `del_arr_date` DATE,
   `del_back` INTEGER,
-  FOREIGN KEY (`mem_no`) REFERENCES `member`(`mem_no`),
-  FOREIGN KEY (`mat_no`) REFERENCES `material`(`mat_no`),
-  FOREIGN KEY (`lib_no_arr`) REFERENCES `library`(`lib_no`)
+  FOREIGN KEY (`mem_no`) REFERENCES `member`(`mem_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (`mat_no`) REFERENCES `material`(`mat_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (`lib_no_arr`) REFERENCES `library`(`lib_no`) ON DELETE SET NULL ON UPDATE CASCADE
 );

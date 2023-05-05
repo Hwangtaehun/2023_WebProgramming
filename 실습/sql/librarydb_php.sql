@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- 생성 시간: 23-05-04 08:10
+-- 생성 시간: 23-05-05 07:06
 -- 서버 버전: 10.4.25-MariaDB
 -- PHP 버전: 8.1.11
 
@@ -65,7 +65,7 @@ CREATE TABLE `address` (
 
 CREATE TABLE `book` (
   `book_no` int(11) NOT NULL,
-  `book_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `book_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `book_author` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `book_publish` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `book_price` int(11) DEFAULT 7000 CHECK (`book_price` >= 6000),
@@ -229,7 +229,8 @@ ALTER TABLE `delivery`
 -- 테이블의 인덱스 `kind`
 --
 ALTER TABLE `kind`
-  ADD PRIMARY KEY (`kind_no`);
+  ADD PRIMARY KEY (`kind_no`),
+  ADD UNIQUE KEY `kind_num` (`kind_num`);
 
 --
 -- 테이블의 인덱스 `lent`
@@ -365,30 +366,30 @@ ALTER TABLE `reservation`
 -- 테이블의 제약사항 `delivery`
 --
 ALTER TABLE `delivery`
-  ADD CONSTRAINT `delivery_ibfk_1` FOREIGN KEY (`mem_no`) REFERENCES `member` (`mem_no`),
-  ADD CONSTRAINT `delivery_ibfk_2` FOREIGN KEY (`mat_no`) REFERENCES `material` (`mat_no`),
-  ADD CONSTRAINT `delivery_ibfk_3` FOREIGN KEY (`lib_no_arr`) REFERENCES `library` (`lib_no`);
+  ADD CONSTRAINT `delivery_ibfk_1` FOREIGN KEY (`mem_no`) REFERENCES `member` (`mem_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `delivery_ibfk_2` FOREIGN KEY (`mat_no`) REFERENCES `material` (`mat_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `delivery_ibfk_3` FOREIGN KEY (`lib_no_arr`) REFERENCES `library` (`lib_no`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- 테이블의 제약사항 `lent`
 --
 ALTER TABLE `lent`
-  ADD CONSTRAINT `lent_ibfk_1` FOREIGN KEY (`mem_no`) REFERENCES `member` (`mem_no`),
-  ADD CONSTRAINT `lent_ibfk_2` FOREIGN KEY (`mat_no`) REFERENCES `material` (`mat_no`);
+  ADD CONSTRAINT `lent_ibfk_1` FOREIGN KEY (`mem_no`) REFERENCES `member` (`mem_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `lent_ibfk_2` FOREIGN KEY (`mat_no`) REFERENCES `material` (`mat_no`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- 테이블의 제약사항 `library`
 --
 ALTER TABLE `library`
-  ADD CONSTRAINT `library_ibfk_1` FOREIGN KEY (`add_no`) REFERENCES `address` (`add_no`);
+  ADD CONSTRAINT `library_ibfk_1` FOREIGN KEY (`add_no`) REFERENCES `address` (`add_no`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- 테이블의 제약사항 `material`
 --
 ALTER TABLE `material`
-  ADD CONSTRAINT `material_ibfk_1` FOREIGN KEY (`lib_no`) REFERENCES `library` (`lib_no`),
-  ADD CONSTRAINT `material_ibfk_2` FOREIGN KEY (`book_no`) REFERENCES `book` (`book_no`),
-  ADD CONSTRAINT `material_ibfk_3` FOREIGN KEY (`kind_no`) REFERENCES `kind` (`kind_no`);
+  ADD CONSTRAINT `material_ibfk_1` FOREIGN KEY (`lib_no`) REFERENCES `library` (`lib_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `material_ibfk_2` FOREIGN KEY (`book_no`) REFERENCES `book` (`book_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `material_ibfk_3` FOREIGN KEY (`kind_no`) REFERENCES `kind` (`kind_no`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- 테이블의 제약사항 `member`
@@ -400,22 +401,22 @@ ALTER TABLE `member`
 -- 테이블의 제약사항 `overdue`
 --
 ALTER TABLE `overdue`
-  ADD CONSTRAINT `overdue_ibfk_1` FOREIGN KEY (`len_no`) REFERENCES `lent` (`len_no`);
+  ADD CONSTRAINT `overdue_ibfk_1` FOREIGN KEY (`len_no`) REFERENCES `lent` (`len_no`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- 테이블의 제약사항 `place`
 --
 ALTER TABLE `place`
-  ADD CONSTRAINT `place_ibfk_1` FOREIGN KEY (`len_no`) REFERENCES `lent` (`len_no`),
-  ADD CONSTRAINT `place_ibfk_2` FOREIGN KEY (`lib_no_len`) REFERENCES `library` (`lib_no`),
-  ADD CONSTRAINT `place_ibfk_3` FOREIGN KEY (`lib_no_re`) REFERENCES `library` (`lib_no`);
+  ADD CONSTRAINT `place_ibfk_1` FOREIGN KEY (`len_no`) REFERENCES `lent` (`len_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `place_ibfk_2` FOREIGN KEY (`lib_no_len`) REFERENCES `library` (`lib_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `place_ibfk_3` FOREIGN KEY (`lib_no_re`) REFERENCES `library` (`lib_no`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- 테이블의 제약사항 `reservation`
 --
 ALTER TABLE `reservation`
-  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`mem_no`) REFERENCES `member` (`mem_no`),
-  ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`mat_no`) REFERENCES `material` (`mat_no`);
+  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`mem_no`) REFERENCES `member` (`mem_no`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`mat_no`) REFERENCES `material` (`mat_no`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
