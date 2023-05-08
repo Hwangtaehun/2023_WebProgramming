@@ -66,7 +66,7 @@ CREATE TABLE `member` (
   `mem_id` VARCHAR(20) UNIQUE,
   `mem_pw` VARCHAR(20) NOT NULL,
   `mem_lent` INTEGER,
-  `mem_ban` INTEGER,
+  `mem_state` INTEGER,
   `add_no` INTEGER,
   `mem_detail` VARCHAR(50),
   FOREIGN KEY (`add_no`) REFERENCES `address`(`add_no`)

@@ -157,7 +157,7 @@ CREATE TABLE `member` (
   `mem_id` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mem_pw` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mem_lent` int(11) DEFAULT NULL,
-  `mem_ban` int(11) DEFAULT NULL,
+  `mem_state` int(11) DEFAULT NULL,
   `add_no` int(11) DEFAULT NULL,
   `mem_detail` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
