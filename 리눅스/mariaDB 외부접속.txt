@@ -1,0 +1,9 @@
+1. mysql -u root -p(root계정 접속)
+2. USE mysql;
+SELECT `host`, `user` FROM `user`;
+3. grant all privileges on *.* to '사용자 이름'@'%' identified by '사용자 이름의 비밀번호';
+4. flush privileges;
+5. systemctl restart mariadb
+포트번호 열기
+6. firewall-cmd --zone=public --permanent --add-port=3306/tcp
+7. firewall-cmd --reload
