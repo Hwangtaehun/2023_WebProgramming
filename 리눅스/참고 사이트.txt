@@ -1,1 +1,6 @@
+한국도서분류표
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=sgjjojo&logNo=221184479000
+java heap space
+https://ldelight.tistory.com/126
+https://developer111.tistory.com/34
+https://malleus123.tistory.com/entry/javalangOutOfMemoryError-Java-heap-space-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0%EA%B3%BC-%EC%9B%90%EC%9D%B8
