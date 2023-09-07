@@ -244,7 +244,7 @@ INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('155', '인도 철학, 사�
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('156', '중국아시아  제국 철학, 사상');
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('157', '시베리아 철학, 사상');
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('158', '서남아시아  제국 철학, 사상');
-INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('156', '아라비아반도 철학, 사상');
+INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('159', '아라비아반도 철학, 사상');
 
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('162', '미국철학');
 INSERT INTO `kind` (`kind_num`, `kind_name`) VALUES ('163', '북구철학');
